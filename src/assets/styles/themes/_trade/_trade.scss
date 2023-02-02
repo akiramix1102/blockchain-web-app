@@ -1,0 +1,71 @@
+:root,
+[data-theme='light'] {
+  --color-border-primary: #31353e;
+  --color-background: #151718;
+  --color-background-mobile: #0A0B0D;
+  --color-background-element: #21242a;
+  --width-table-order-primary: 331px;
+  --width-default: 1524px;
+  --color-text-primary: #ececec; // màu text primary
+
+  --color-sell-primary: #cf202f; // màu các lệnh bán
+  --color-buy-primary: #129961; // màu các lệnh mua
+
+  --color-text-secondary: #999999; // màu text mờ
+
+  --color-order-book-buy: #152b28; // màu order book mua
+  --color-order-book-sell: #2c1e24; // màu order book bán
+
+  --color-active-primary: linear-gradient(90deg, #b32df0 9.85%, #204cfe 65.37%, #1660fe 80.9%, #2e89ff 100%); // màu active
+
+  --color-tab-active-primary: linear-gradient(90deg, #b32df0 9.85%, #204cfe 65.37%, #1660fe 80.9%, #2e89ff 100%); // màu tab active
+
+  --color-icon-sort: #5a6273; // màu icon sort & text cancelled
+
+  --color-custom-scroll: #5a6273; // màu scroll
+
+  --color-light-blue: #2e89ff; // màu text cancel & deposit
+
+  --color-background-filter: #31353e; // màu background bộ lọc & phân trang
+}
+
+[data-theme='dark'] {
+  --color-background-mobile: #0A0B0D;
+  --color-border-primary: #31353e;
+  --color-background: #151718;
+  --color-background-element: #21242a;
+  --width-table-order-primary: 331px;
+  --width-default: 1524px;
+
+  --color-text-primary: #ececec; //màu text primary
+
+  --color-sell-primary: #cf202f; // màu các lệnh bán
+  --color-buy-primary: #129961; // màu các lệnh mua
+
+  --color-text-secondary: #999999; // màu text mờ
+
+  --color-order-book-buy: #152b28; // màu order book mua
+  --color-order-book-sell: #2c1e24; // màu order book bán
+
+  --color-tab-active-primary: linear-gradient(90deg, #b32df0 9.85%, #204cfe 65.37%, #1660fe 80.9%, #2e89ff 100%); // màu tab active
+  --color-active-primary: linear-gradient(90deg, #b32df0 9.85%, #204cfe 65.37%, #1660fe 80.9%, #2e89ff 100%); // màu tab active
+
+  --color-icon-sort: #5a6273; // màu icon sort & text cancelled
+
+  --color-custom-scroll: #5a6273; // màu scroll
+
+  --color-light-blue: #2e89ff; // màu text cancel & deposit
+
+  --color-background-filter: #31353e; // màu background bộ lọc & phân trang
+}
+
+
+.trade-text-white {
+  color: var(--color-text-primary)!important;
+}
+.trade-text-success {
+  color: var(--color-buy-primary)!important;;
+}
+.trade-text-error {
+  color: var(--color-sell-primary)!important;;
+}

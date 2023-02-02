@@ -1,0 +1,200 @@
+.exchange-text-active {
+  background: var(--color-active-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.exchange-text-success {
+  color: var(--color-buy-primary);
+}
+.exchange-text-error {
+  color: var(--color-sell-primary);
+}
+.text-trade-sell {
+  color: var(--color-sell-primary) !important;
+}
+.text-trade-down {
+  color: var(--color-sell-primary) !important;
+}
+.text-trade-buy {
+  color: var(--color-buy-primary) !important;
+}
+.text-trade-up {
+  color: var(--color-buy-primary) !important;
+}
+.text-trade-default {
+  color: var(--color-text-primary) !important;
+}
+.text-trade-desc {
+  color: var(--color-text-secondary);
+}
+.text-blue {
+  color: var(--color-light-blue);
+}
+.text-trade-primary {
+  color: var(--color-text-primary);
+}
+
+.exchange-background-popup {
+  background: #21242a;
+}
+.exchange-text-cancel-blue {
+  color: #2e89ff;
+}
+.exchange-text-sell {
+  color: #cf202f !important;
+}
+.exchange-text-buy {
+  color: #129961 !important;
+}
+
+.scroll-custom-exchange {
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 6px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgb(94, 102, 115);
+    border-radius: 3px;
+    height: 90px;
+  }
+}
+
+.el-date-table td.today {
+  z-index: 100;
+  & > div {
+    z-index: 120;
+
+    & > span {
+      z-index: inherit;
+      color: var(--color-text-primary);
+      font-weight: 400;
+    }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: calc(50% + 1px);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    // border: 1px solid #204cfe;
+    background: var(--color-active-primary);
+    z-index: 100;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: calc(50% + 1px);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    // border: 1px solid #204cfe;
+    background: var(--color-background-element);
+    z-index: 100;
+  }
+}
+.el-date-table td.start-date {
+  span {
+    z-index: 500;
+    background-color: transparent !important;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: calc(50% + 1px);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 4px 0px 0px 4px;
+    // border: 1px solid #204cfe;
+    background: var(--color-tab-active-primary);
+    z-index: 100;
+  }
+}
+.el-date-table td.end-date {
+  span {
+    z-index: 500;
+    background-color: transparent !important;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: calc(50% + 1px);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 0px 4px 4px 0px;
+    // border: 1px solid #204cfe;
+    background: var(--color-tab-active-primary);
+    z-index: 100;
+  }
+}
+.el-date-table td.today :focus-visibile {
+  span {
+    z-index: 500;
+    background-color: transparent !important;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: calc(50% + 1px);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 0px 4px 4px 0px;
+    // border: 1px solid #204cfe;
+    background: var(--color-tab-active-primary);
+    z-index: 100;
+  }
+}
+@keyframes growProgressBar {
+  0%,
+  33% {
+    --pgPercentage: 0;
+  }
+  100% {
+    --pgPercentage: var(--value);
+  }
+}
+
+@property --pgPercentage {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+div[role='progressbar'] {
+  --size: 40px;
+  --fg: #129961;
+  --bg: #151718;
+  --pgPercentage: var(--value);
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(closest-side, #151718 95%, transparent 0 100%, #151718 0), conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+  // font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: var(--fg);
+}
+
+div[role='progressbar']::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+}
